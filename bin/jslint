@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+(function () {
+  "use strict";
+
+  var jslint = require('jslint-strict')
+    , util = require('util')
+    , fs = require('fs')
+    , defaults = {
+        strict: true,
+        node: true,
+        es5: true,
+        predef: [
+          "provide" // require-kiss
+        ],
+        maxerr: 5
+      }
+    , file = process.argv[2]
+    , options;
+
+  // look in `node_modules` for jslint_defaults
+  try {
+    options = require('jslint-defaults');
+    Object.keys(options).forEach(function (key) {
+      defaults[key] = options[key];
+    });
+  } catch(e) {
+    // do nothing
+  }
+
+  function dolint(err, data) {
+    var success;
+
+    if (err) {
+      util.puts("jslint: Couldn't open file '" + file + "'.");
+      throw err;
+    }
+
+    success = jslint(data.toString("utf8"), defaults);
+    if (true === success) {
+      util.puts("Hi-5 Brotha! You masta' yo' the codez!");
+      return;
+    }
+
+    jslint.errors.forEach(function (error, i) {
+      var pad = '' + (i + 1);
+
+      while (pad.length < 3) {
+          pad = ' ' + pad;
+      }
+
+      if (error) {
+          util.puts(pad + ' ' + error.line + ',' + error.character + ': ' + error.reason);
+          util.puts( ' ' + (error.evidence || '').replace(/^\s+|\s+$/, ""));
+      }
+    });
+  }
+
+  if (!file) {
+    util.puts("Usage: jslint file.js");
+    return;
+  }
+
+  fs.readFile(file, dolint);
+}());

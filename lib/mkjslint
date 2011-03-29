@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+(function () {
+  "use strict";
+
+  //require('bufferjs');
+
+  // Forgive me oh gods of asynchronous programming, for I have sinned.
+  var fs = require('fs')
+    , header = fs.readFileSync(__dirname + '/header.js.part')
+    , body = fs.readFileSync(__dirname + '/fulljslint.js')
+    , footer = fs.readFileSync(__dirname + '/footer.js.part');
+
+  //fs.writeFileSync('../jslint.js', Buffer.concat(header, body, footer));
+  fs.writeFileSync('../jslint.js', header.toString() +  body.toString() + footer.toString());
+}());

@@ -1,0 +1,28 @@
+{
+  "name": "jslint-strict",
+  "description": "A fork of Douglas Crockford's JSLint for Node.JS that auto-updates",
+  "version": "1.0.0",
+  "homepage": "http://jslint.com",
+  "author": "Douglas Crockford <douglas@crockford.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coolaj86/JSLint.git"
+  },
+  "main": "jslint.js",
+  "directories": {
+    "lib": "."
+  },
+  "dependencies": {
+    "bufferjs": ">= 1.0.0",
+    "require-kiss": ">= 1.0.5"
+  },
+  "scripts": {
+    "preinstall": "make -f Makefile"
+  },
+  "bin": {
+    "jslint-strict": "./bin/jslint"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
