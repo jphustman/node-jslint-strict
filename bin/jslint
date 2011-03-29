@@ -37,7 +37,7 @@
 
     success = jslint(data.toString("utf8"), defaults);
     if (true === success) {
-      util.puts("Hi-5 Brotha! You masta' yo' the codez!");
+      util.puts("Passed.\nHmmm... strong with you the code is.");
       return;
     }
 
