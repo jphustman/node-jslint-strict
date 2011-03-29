@@ -9,3 +9,4 @@ all:
 clean:
 	rm -f ./lib/fulljslint.js
 	rm -f ./jslint.js
+	rm -f ./jslint-strict.js

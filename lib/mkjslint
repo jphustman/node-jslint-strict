@@ -10,6 +10,6 @@
     , body = fs.readFileSync(__dirname + '/fulljslint.js')
     , footer = fs.readFileSync(__dirname + '/footer.js.part');
 
-  //fs.writeFileSync('../jslint.js', Buffer.concat(header, body, footer));
-  fs.writeFileSync('../jslint.js', header.toString() +  body.toString() + footer.toString());
+  //fs.writeFileSync(__dirname + '/../jslint.js', Buffer.concat(header, body, footer));
+  fs.writeFileSync(__dirname + '/../jslint-strict.js', header.toString() +  body.toString() + footer.toString());
 }());
