@@ -10,7 +10,7 @@
         node: true,
         es5: true,
         predef: [
-          "provide" // require-kiss
+          "provide" // ender.js
         ],
         maxerr: 5
       }

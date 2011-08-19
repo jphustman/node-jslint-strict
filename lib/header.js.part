@@ -1,7 +1,5 @@
 (function () {
   "use strict";
 
-  //require('require-kiss');
-
   /* node-jslint header (above) */
 

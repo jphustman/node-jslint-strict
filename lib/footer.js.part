@@ -3,5 +3,4 @@
   /* node-jslint footer (below) */
 
   module.exports = JSLINT;
-  //provide('jslint-strict', module.exports);
 }());
