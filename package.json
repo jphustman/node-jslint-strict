@@ -1,7 +1,7 @@
 {
   "name": "jslint-strict",
   "description": "A fork of Douglas Crockford's JSLint for Node.JS that auto-updates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "http://jslint.com",
   "author": "Douglas Crockford <douglas@crockford.com>",
   "repository": {
