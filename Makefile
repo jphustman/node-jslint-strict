@@ -1,12 +1,9 @@
 all:
-	curl -L --silent \
-    -o ./lib/fulljslint.js \
-    https://github.com/douglascrockford/JSLint/raw/master/jslint.js
+	git submodule update --init
+	git submodule foreach git checkout master
+	git submodule foreach git pull
 	./lib/mkjslint
 
-# TODO use node rather than curl
-
 clean:
-	rm -f ./lib/fulljslint.js
 	rm -f ./jslint.js
 	rm -f ./jslint-strict.js

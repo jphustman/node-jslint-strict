@@ -6,7 +6,7 @@
   "author": "Douglas Crockford <douglas@crockford.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coolaj86/JSLint.git"
+    "url": "https://github.com/coolaj86/node-jslint-strict"
   },
   "main": "jslint-strict.js",
   "directories": {

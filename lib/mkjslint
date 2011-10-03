@@ -7,7 +7,7 @@
   // Forgive me oh gods of asynchronous programming, for I have sinned.
   var fs = require('fs')
     , header = fs.readFileSync(__dirname + '/header.js.part')
-    , body = fs.readFileSync(__dirname + '/fulljslint.js')
+    , body = fs.readFileSync(__dirname + '/JSLint/jslint.js')
     , footer = fs.readFileSync(__dirname + '/footer.js.part');
 
   //fs.writeFileSync(__dirname + '/../jslint.js', Buffer.concat(header, body, footer));
